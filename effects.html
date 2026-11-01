@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part 2: jQuery Effects | Assignment 6 jQuery</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Part 1: Basics</a><a href="effects.html" class="on">Part 2: Effects</a><a href="dom.html">Part 3: DOM</a><a href="animations.html">Part 4: Animations</a><a href="project.html">Part 5: Project</a></nav><main><h1>Part 2: jQuery Effects</h1>
+<section><h2>Task 2. Visibility methods</h2>
+<p id="p1">This paragraph is controlled with .hide(), .show() and .toggle().</p>
+<button id="hide">Hide</button><button id="show">Show</button><button id="toggle">Toggle</button></section>
+<section><h2>Task 3. Fade methods</h2>
+<img id="pic" src="https://picsum.photos/id/1015/600/300" alt="Landscape photo" width="600" height="300">
+<button id="fin">Fade In</button><button id="fout">Fade Out</button><button id="ftog">Fade Toggle</button></section>
+<section><h2>Task 4. Slide methods</h2>
+<button id="up">Slide Up</button><button id="down">Slide Down</button><button id="stog">Slide Toggle</button>
+<div id="panel">Collapsible panel: it slides with .slideUp(), .slideDown() and .slideToggle().</div></section>
+</main>
+<footer>Alikhan Kadashov, group SE-2524. Assignment #6: jQuery</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>$(document).ready(function () {
+  $("#hide").click(function () { $("#p1").hide(); });
+  $("#show").click(function () { $("#p1").show(); });
+  $("#toggle").click(function () { $("#p1").toggle(); });
+
+  $("#fin").click(function () { $("#pic").fadeIn(600); });
+  $("#fout").click(function () { $("#pic").fadeOut(600); });
+  $("#ftog").click(function () { $("#pic").fadeToggle(600); });
+
+  $("#up").click(function () { $("#panel").slideUp(400); });
+  $("#down").click(function () { $("#panel").slideDown(400); });
+  $("#stog").click(function () { $("#panel").slideToggle(400); });
+});</script></body></html>

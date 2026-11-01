@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part 1: Getting Started with jQuery | Assignment 6 jQuery</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html" class="on">Part 1: Basics</a><a href="effects.html">Part 2: Effects</a><a href="dom.html">Part 3: DOM</a><a href="animations.html">Part 4: Animations</a><a href="project.html">Part 5: Project</a></nav><main><h1>Part 1: Getting Started with jQuery</h1>
+<section><h2>Task 0. Setup</h2>
+<p id="status">Waiting for jQuery...</p>
+<p>jQuery is loaded from a CDN. Open the browser console (F12) to see the message.</p></section>
+<section><h2>Task 1. Selectors &amp; CSS</h2>
+<h3 id="title1">Heading selected by ID</h3>
+<p class="note">Paragraph selected by class</p>
+<ul><li>List item selected by tag</li><li>Another list item</li></ul>
+<button id="btnText">Change content</button><button id="btnCss">Change styles</button><button id="btnReset">Reset</button></section>
+</main>
+<footer>Alikhan Kadashov, group SE-2524. Assignment #6: jQuery</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>$(document).ready(function () {
+  console.log("jQuery is ready!");
+  $("#status").text("jQuery is ready! (message also printed in the console)");
+
+  var orig = { h: $("#title1").text(), n: $(".note").html() };
+  $("#btnText").click(function () {
+    $("#title1").text("Text changed with .text()");
+    $(".note").html("This is <b>bold</b> because of <i>.html()</i>");
+  });
+  $("#btnCss").click(function () {
+    $("li").css({ color: "#0e7c6b", "font-weight": "bold" });
+    $("#title1").css("background-color", "#e9f4f1");
+    $(".note").css("font-size", "1.2rem");
+  });
+  $("#btnReset").click(function () {
+    $("#title1").text(orig.h).removeAttr("style");
+    $(".note").html(orig.n).removeAttr("style");
+    $("li").removeAttr("style");
+  });
+});</script></body></html>

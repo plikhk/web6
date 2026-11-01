@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part 4: Animations | Assignment 6 jQuery</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Part 1: Basics</a><a href="effects.html">Part 2: Effects</a><a href="dom.html">Part 3: DOM</a><a href="animations.html" class="on">Part 4: Animations</a><a href="project.html">Part 5: Project</a></nav><main><h1>Part 4: Animations</h1>
+<section><h2>Task 8. Basic animation</h2>
+<button id="a8">Animate</button><button class="rs" data-t="#b8">Reset</button>
+<div class="stage"><div class="box" id="b8"></div></div></section>
+<section><h2>Task 9. Sequential animations</h2>
+<button id="a9">Run sequence</button><button class="rs" data-t="#b9">Reset</button>
+<div class="stage"><div class="box" id="b9"></div></div></section>
+<section><h2>Task 10. Combined animation</h2>
+<button id="a10">Animate</button><button class="rs" data-t="#b10">Reset</button>
+<div class="stage"><div class="box" id="b10"></div></div></section>
+</main>
+<footer>Alikhan Kadashov, group SE-2524. Assignment #6: jQuery</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>$(document).ready(function () {
+  // Task 8: size + position
+  $("#a8").click(function () {
+    $("#b8").animate({ width: "100px", height: "100px", left: "180px", top: "50px" }, 800);
+  });
+  // Task 9: right -> down -> shrink -> return
+  $("#a9").click(function () {
+    $("#b9").stop(true)
+      .animate({ left: "200px" }, 600)
+      .animate({ top: "120px" }, 600)
+      .animate({ width: "25px", height: "25px" }, 500)
+      .animate({ left: 0, top: 0, width: "50px", height: "50px" }, 700);
+  });
+  // Task 10: opacity + size + position in one call
+  $("#a10").click(function () {
+    $("#b10").animate({ opacity: 0.4, width: "110px", height: "110px", left: "180px", top: "60px" }, 1000);
+  });
+  $(".rs").click(function () {
+    $($(this).data("t")).stop(true).css({ left: 0, top: 0, width: "50px", height: "50px", opacity: 1 });
+  });
+});</script></body></html>
