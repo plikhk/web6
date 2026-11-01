@@ -22,4 +22,4 @@ A five-page site that demonstrates jQuery (loaded from the code.jquery.com CDN).
 
 ## Deployment (GitHub Pages)
 Repository Settings > Pages > Deploy from a branch > `main` / root.
-Live site: `https://plikhk.github.io/<repository-name>/`
+Live site: `https://plikhk.github.io/web6/`
